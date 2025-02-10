@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>Your Portfolio</title>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=NTR&display=swap" rel="stylesheet"> <!-- Added NTR font -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        <style>
+            body {
+                font-family: 'NTR', 'Work Sans', sans-serif; /* Ensure NTR is applied */
+                margin: 0; /* Ensure no margin */
+                padding: 0;
+                background: #020c1b;
+                color: #BDC4D4;
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Center main content */
+            }
+    
+            /* Other styles remain unchanged */
+    
+    
+
+        header {
+            padding: 0; /* Remove padding */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+        }
+
+        nav {
+            display: flex;
+            gap: 0;
+            flex-grow: 1;
+            justify-content: flex-start;
+            background: #020c1b; /* Same gradient */
+            border-bottom: 2px solid #020c1b; /* Slightly transparent border */
+            padding: 0.5rem 0; /* Adjust padding to fit content */
+        }
+
+        nav a {
+            font-family: 'NTR', sans-serif;
+            font-weight: bolder;
+            color: #BDC4D4;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            position: relative;
+            font-size: 0.8rem;
+
+        }
+
+        .get-in-touch {
+            margin-left: auto;
+        }
+
+        main {
+            max-width: 900px;
+            margin-top: 80px; /* Ensure content is below the fixed navbar */
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the greeting */
+            height: auto;
+            padding: 20px;
+        }
+
+        .intro-container {
+            text-align: left; /* Keep text and icons left-aligned */
+            width: 100%; /* Full width for centering */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the intro container */
+        }
+
+        .logo {
+            max-width: 100%; 
+            height: auto; 
+            margin-bottom: 20px; 
+        }
+
+        h2 {
+        
+            font-size: 5rem; 
+            line-height: 1.2; 
+            margin: 0; 
+        }
+
+        h3 {
+            font-size: 2.5rem; /* Increased font size */
+            line-height: 1.2;
+            margin: 0;
+            margin-left: 0; /* Keep About Me section left-aligned */
+        }
+
+        .animated-text {
+            display: inline;
+            font-weight: bold;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            background-color: #24292e;
+            animation: blink 0.7s step-end infinite;
+            margin-left: 2px;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .social-icons {
+            margin-top: 0;
+            display: flex;
+            gap: 20px;
+            justify-content: flex-start; /* Keep social icons left-aligned */
+            width: 100%; /* Allow to take full width */
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: #BDC4D4;
+            font-size: 2rem;
+        }
+
+        .line {
+            border-top: 1px solid #24292e5e;
+            width: 200px;
+            display: inline-block;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .about-section {
+            max-width: 1000px; 
+            margin-top: 10px;
+            padding: 20px;
+            background: transparent;
+            width: 100%; 
+            text-align: left; 
+        }
+
+    
+.about-content p {
+    display: flex;
+    margin-right: 450px; /* Increased margin to give more space for image */
+    vertical-align: left;
+}
+.about-image {
+    border-radius: 10px;
+    height: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1px;
+    transform: none;
+}
+.img_deg {
+    height: 300px;  /* Match project card height (170px container + padding) */
+    width: 300px;   /* Match project card width */
+    border-radius: 10px;
+    box-shadow: 6px 13px 23px -5px rgba(0, 0, 0, 0.46);
+    object-fit: cover; /* Ensure image covers the area properly */
+}
+
+.pos_cen {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.technologies {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: px;
+    margin-top: 10px; /* Reduced spacing between paragraph and technologies */
+    width: 50%;
+}
+
+        p {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem; /* Increased font size */
+            line-height: 1.5;
+            margin-top: 0px;
+            margin-bottom: 0; 
+            margin-left: 0; /* Moved completely to the left */
+            text-align: justify; /* Justify text */
+            text-justify: inter-word; /* Improve justification */
+        }
+
+        .technologies {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            grid-gap: 5px; 
+            margin-top: 15px; /* Space above the grid */
+            width: 50%; /* Full width to align with text */
+      
+        }
+
+   .technology-item {
+    display: flex;
+    align-items: center; /* Center align items vertically */
+    height: 20px; 
+    margin-top: 5px;
+}
+        .technology-item span {
+    font-size: 1rem; /* Increased font size */
+    color: #BDC4D4; /* Make 3sure it matches your theme */
+}
+
+
+        /* From Uiverse.io by Nawsome */
+        .arrow {
+            cursor: pointer;
+            height: 15px; /* Decreased size */
+            width: 8px; /* Decreased size */
+            margin-right: 8px; /* Space between arrow and text */
+            position: relative; /* Changed to relative for proper alignment */
+        }
+
+        .arrow-top, .arrow-bottom {
+            background-color: #64ffda;
+            height: 1px; /* Adjusted height for smaller size */
+            left: 50%; /* Centered the arrow */
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateX(-50%); /* Centering the arrow */
+        }
+
+        .arrow-top:after, .arrow-bottom:after {
+            background-color: #fff;
+            content: "";
+            height: 100%;
+            position: absolute;
+            top: 0;
+            transition: all 0.15s;
+        }
+
+        .arrow-top {
+            transform: rotate(45deg);
+            transform-origin: bottom right;
+        }
+
+        .arrow-top:after {
+            left: 100%;
+            right: 0;
+            transition-delay: 0s;
+        }
+
+        .arrow-bottom {
+            transform: rotate(-45deg);
+            transform-origin: top right;
+        }
+
+        .arrow-bottom:after {
+            left: 0;
+            right: 100%;
+            transition-delay: 0.15s;
+        }
+
+        .arrow:hover .arrow-top:after {
+            left: 0;
+            transition-delay: 0.15s;
+        }
+
+        .arrow:hover .arrow-bottom:after {
+            right: 0;
+            transition-delay: 0s;
+        }
+
+        .arrow:active {
+            transform: scale(0.9);
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in forwards;
+        }
+/* New Projects Section Styles */
+#projects {
+    margin: auto;
+    padding-top: 100px;
+    max-width: 1000px;
+    min-height: 50vh;
+    
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+@media (max-width: 1080px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        place-items: center;
+    }
+}
+
+.projects-card {
+    position: relative;
+    cursor: default;
+    width:270px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1rem 0.5rem;
+    background-color: #112240; /* Corrected color */
+    border-radius: 16px;
+    margin-top: 10px;
+}
+
+.projects-card:hover {
+    transform: translateY(-7px);
+    background-color: #233554; /* Corrected color */
+}
+
+.card-header {
+    margin-top: -20px;
+    display: flex;
+    padding: 1.25em 0 !important;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: none !important;
+}
+
+.folder-icon {
+    color: #64ffda; /* Corrected color */
+}
+
+.github-icon {
+    margin-top: 6px;
+   color: #BDC4D4;
+}
+
+.github-icon:hover {
+    color: #a2e0ff; /* Corrected color */
+}
+
+.open-icon {
+    margin-left: 10px;
+}
+
+.card-title {
+    font-family: "NTR", sans-serif;
+    color: #ccd6f6; /* Corrected color */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.card-desc {
+    font-family: "NTR", sans-serif;
+    color: #8892b0; /* Corrected color */
+    font-size: 18px;
+    padding-bottom: 40px;
+}
+
+.card-tech {
+    font-family: "NTR", sans-serif;
+    color: #8892b0; /* Corrected color */
+    font-size: 16px;
+}
+
+/* New Project Card Styles */
+.article-wrapper {
+    width: 300px;
+    transition: 0.15s all ease-in-out;
+    border-radius: 10px;
+    padding: 5px;
+    border: 4px solid transparent;
+    cursor: pointer;
+    background-color: #112240;
+}
+
+.article-wrapper:hover {
+    box-shadow: 10px 10px 0 #64ffda, 20px 20px 0 #233554;
+    border-color: #64ffda;
+    transform: translate(-20px, -20px);
+}
+
+.article-wrapper:active {
+    box-shadow: none;
+    transform: translate(0, 0);
+}
+
+.container-project {
+    width: 100%;
+    height: 170px;
+    background: #233554;
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-title {
+    font-size: 1.5em;
+    margin: 0;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #ccd6f6;
+}
+
+.flex-pr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-type {
+    background: #233554;
+    color: #64ffda;
+    font-weight: bold;
+    padding: 0.3em 0.7em;
+    border-radius: 15px;
+    font-size: 12px;
+    letter-spacing: -0.6px;
+}
+
+.project-hover {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 9px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.article-wrapper:hover .project-hover {
+    transform: translateY(-5px);
+    background-color: transparent;
+}
+
+.project-hover:hover i {
+    transform: scale(1.1);
+}
+
+.types {
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    /* Header/Navigation */
+    nav {
+        padding: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.7rem;
+    }
+
+    .get-in-touch {
+        margin-left: 0;
+    }
+
+    /* Main Section */
+    main {
+        margin-top: 120px;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    /* About Section */
+    .about-section {
+        padding: 10px;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    .line {
+        width: 100px;
+    }
+
+    .pos_cen {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-content p {
+        margin-right: 0;
+        text-align: left;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .about-image {
+        display: none; /* Hide image on mobile */
+    }
+
+    .technologies {
+        width: 100%;
+        margin-top: 20px;
+        grid-template-columns: repeat(2, 1fr); /* Keep 2 columns */
+        grid-gap: 15px;
+        padding: 0 10px;
+    }
+
+    .technology-item {
+        margin-top: 0;
+    }
+
+    .img_deg {
+        display: none;
+    }
+
+    /* Projects Section */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .article-wrapper {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .article-wrapper:hover {
+        transform: translate(-10px, -10px);
+        box-shadow: 5px 5px 0 #64ffda, 10px 10px 0 #233554;
+    }
+
+    /* Footer */
+    .footer {
+        margin-top: 30px;
+        padding: 15px 0;
+    }
+
+    .copyright-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+    nav a {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .technologies {
+        grid-template-columns: repeat(2, 1fr); /* Keep 2 columns even on smaller screens */
+        grid-gap: 10px;
+    }
+
+    .technologies {
+        margin-top: 20px;
+    }
+
+    .about-image,
+    .img_deg {
+        display: none;
+    }
+}
+
+/* Fix for devices between 768px and 1024px */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-image {
+        margin-left: 40px;
+    }
+
+    .about-content p {
+        margin-right: 150px;
+    }
+}
+
+        </style>
+    </head>
+<body>
+    <header>
+        <nav>
+            <a href="#">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#projects">PROJECTS</a>
+            <a href="path/to/your/resume.pdf" target="_blank">RESUME</a>
+            <a href="mailto:xoxoreem8@gmail.com" class="get-in-touch">GET IN TOUCH</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="intro-container">
+            <div id="fractal-tree"></div> <!-- Fractal tree placeholder -->
+            <h2>
+                Hi, <span style="color: #64ffda;">Hareem</span> here<br>
+                I like to <span class="animated-text" id="dynamic-text"></span><span class="cursor" id="cursor"></span>
+            </h2>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/yourprofile" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+
+    <div class="about-section" id="about">
+        <h3>about me:<div class="line"></div></h3>
+        <div class="pos_cen">
+            <p>
+                I am currently a full-time freelancer specializing in front-end<br> 
+                development and UI/UX design.<br> <br>
+                Here are some technologies I have been working with:
+            </p>
+            <div class="about-image">
+                <img class="img_deg" src="me3.jpg">
+            </div>
+            
+        </div>
+
+        <!-- Technologies Grid below the About Me paragraph -->
+        <div class="technologies">
+            <div class="technology-item">
+                <div class="arrow">
+                    <div class="arrow-top"></div>
+                    <div class="arrow-bottom"></div>
+                </div>
+                <span>HTML/CSS</span>
+            </div>
+            <div class="technology-item">
+                <div class="arrow">
+                    <div class="arrow-top"></div>
+                    <div class="arrow-bottom"></div>
+                </div>
+                <span>JavaScript</span>
+            </div>
+            <div class="technology-item">
+                <div class="arrow">
+                    <div class="arrow-top"></div>
+                    <div class="arrow-bottom"></div>
+                </div>
+                <span>React</span>
+            </div>
+            <div class="technology-item">
+                <div class="arrow">
+                    <div class="arrow-top"></div>
+                    <div class="arrow-bottom"></div>
+                </div>
+                <span>Figma</span>
+            </div>
+            <div class="technology-item">
+                <div class="arrow">
+                    <div class="arrow-top"></div>
+                    <div class="arrow-bottom"></div>
+                </div>
+                <span>Webflow</span>
+            </div>
+            <div class="technology-item">
+                <div class="arrow">
+                    <div class="arrow-top"></div>
+                    <div class="arrow-bottom"></div>
+                </div>
+                <span>Adobe Illustrator</span>
+            </div>
+            <div class="technology-item">
+                <div class="arrow">
+                    <div class="arrow-top"></div>
+                    <div class="arrow-bottom"></div>
+                </div>
+                <span>Canva</span>
+            </div>
+            <div class="technology-item">
+                <div class="arrow">
+                    <div class="arrow-top"></div>
+                    <div class="arrow-bottom"></div>
+                </div>
+                <span>Git</span>
+            </div>
+        </div>
+    </div>
+    <div class="projects-section" id="projects">
+        <h3>my projects:<div class="line"></div></h3>
+        <div class="projects-grid">
+            <!-- Project Card 1 -->
+            <article class="article-wrapper">
+                <div class="rounded-lg container-project">
+                    <img src="web1.jpeg" alt="Project 1" class="project-image">
+                </div>
+                <div class="project-info">
+                    <div class="flex-pr">
+                        <div class="project-title text-nowrap">Portfolio Website</div>
+                        <a href="https://github.com/yourusername/portfolio" target="_blank" class="project-hover">
+                            <i class="fab fa-github" style="color: #64ffda; font-size: 1.5em;"></i>
+                        </a>
+                    </div>
+                    <div class="types">
+                        <span class="project-type">• React</span>
+                        <span class="project-type">• JavaScript</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 2 -->
+            <article class="article-wrapper">
+                <div class="rounded-lg container-project">
+                    <img src="Untitled 3.png" alt="Project 2" class="project-image">
+                </div>
+                <div class="project-info">
+                    <div class="flex-pr">
+                        <div class="project-title text-nowrap">E-Commerce App</div>
+                        <a href="https://github.com/yourusername/ecommerce" target="_blank" class="project-hover">
+                            <i class="fab fa-github" style="color: #64ffda; font-size: 1.5em;"></i>
+                        </a>
+                    </div>
+                    <div class="types">
+                        <span class="project-type">• Node.js</span>
+                        <span class="project-type">• MongoDB</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 3 -->
+            <article class="article-wrapper">
+                <div class="rounded-lg container-project">
+                    <img src="uiux.jpeg" alt="Project 3" class="project-image">
+                </div>
+                <div class="project-info">
+                    <div class="flex-pr">
+                        <div class="project-title text-nowrap">UI/UX Design</div>
+                        <a href="https://github.com/yourusername/uiux-design" target="_blank" class="project-hover">
+                            <i class="fab fa-github" style="color: #64ffda; font-size: 1.5em;"></i>
+                        </a>
+                    </div>
+                    <div class="types">
+                        <span class="project-type">• Figma</span>
+                        <span class="project-type">• Adobe XD</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <!-- Replace existing footer with new styled footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="copyright-text">© <script>document.write(new Date().getFullYear())</script> Hareem. All rights reserved.</p>
+        </div>
+    </footer>
+ 
+    <script>
+        const phrases = ["create", "design", "develop"];
+        let index = 0;
+        let currentPhrase = '';
+        let letterIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 150; // Speed of typing in milliseconds
+        const erasingSpeed = 100; // Speed of erasing in milliseconds
+        const pauseBetween = 1000; // Pause between phrases
+
+        function type() {
+            if (letterIndex < phrases[index].length) {
+                currentPhrase += phrases[index].charAt(letterIndex);
+                letterIndex++;
+                document.getElementById("dynamic-text").innerText = currentPhrase;
+                setTimeout(type, typingSpeed);
+            } else {
+                setTimeout(deleteText, pauseBetween);
+            }
+        }
+
+        function deleteText() {
+            if (letterIndex > 0) {
+                currentPhrase = currentPhrase.substring(0, letterIndex - 1);
+                letterIndex--;
+                document.getElementById("dynamic-text").innerText = currentPhrase;
+                setTimeout(deleteText, erasingSpeed);
+            } else {
+                index = (index + 1) % phrases.length; // Move to the next phrase
+                setTimeout(type, typingSpeed + 1000); // Pause before starting to type the next phrase
+            }
+        }
+
+        // Start typing the first phrase
+        type();
+
+        // Fractal Tree Animation
+        let angle;
+
+        function setup() {
+            const canvas = createCanvas(400, 400);
+            canvas.parent('fractal-tree'); // Attach canvas to the fractal-tree div
+            angle = PI / 4;
+            stroke('#BDC4D4'); // Set stroke color to your accent color
+        }
+
+        function draw() {
+            clear();
+            translate(200, height);
+            angle = map(sin(frameCount * 0.01), -1, 1, PI / 2, PI / 16); // Vary the angle using sin()
+            branch(100);
+        }
+
+        function branch(len) {
+            line(0, 0, 0, -len);
+            translate(0, -len);
+            if (len > 4) {
+                push();
+                rotate(angle);
+                branch(len * 0.67);
+                pop();
+                push();
+                rotate(-angle);
+                branch(len * 0.67);
+                pop();
+            }
+        }
+    </script>
+    <script>
+        // Start the p5.js sketch
+        new p5();
+    </script>
+</body>
+</html>
