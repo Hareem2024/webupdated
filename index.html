@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
+<head>
+  <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <title>Your Portfolio</title>
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=NTR&display=swap" rel="stylesheet"> <!-- Added NTR font -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="css/style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
         <style>
             body {
@@ -149,47 +150,58 @@
             text-align: left; 
         }
 
-    
-.about-content p {
-    display: flex;
-    margin-right: 450px; /* Increased margin to give more space for image */
-    vertical-align: left;
-}
-.about-image {
-    border-radius: 10px;
-    height: auto;
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 1px;
-    transform: none;
-}
-.img_deg {
-    height: 300px;  /* Match project card height (170px container + padding) */
-    width: 300px;   /* Match project card width */
-    border-radius: 10px;
-    box-shadow: 6px 13px 23px -5px rgba(0, 0, 0, 0.46);
-    object-fit: cover; /* Ensure image covers the area properly */
-}
+        .about-section h3 {
+            margin-bottom: 20px; /* Add space between heading and content */
+        }
 
-.pos_cen {
-    position: relative;
-    width: 100%;
-    margin-top: 10px;
-}
+        .pos_cen {
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px; /* Add consistent spacing */
+        }
 
-.about-content {
-    display: flex;
-    flex-direction: column;
-}
+        .about-card {
+            background: #020c1b;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
 
-.technologies {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: px;
-    margin-top: 10px; /* Reduced spacing between paragraph and technologies */
-    width: 50%;
-}
+        .about-card h3 {
+            margin: 0; /* Remove all margins */
+            padding: 0; /* Remove all padding */
+            display: flex;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            align-items: flex-start;
+            margin-top: 40px; /* Add margin to move image down */
+        }
+
+        .about-content p {
+            display: flex;
+            margin-right: 450px; /* Increased margin to give more space for image */
+            vertical-align: left;
+        }
+
+        .technologies {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 5px;
+            margin-top: 15px;
+            width: 100%; /* Changed from 50% to 100% since it's inside the card */
+        }
 
         p {
             font-family: 'Work Sans', sans-serif;
@@ -202,25 +214,16 @@
             text-justify: inter-word; /* Improve justification */
         }
 
-        .technologies {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); 
-            grid-gap: 5px; 
-            margin-top: 15px; /* Space above the grid */
-            width: 50%; /* Full width to align with text */
-      
+        .technology-item {
+            display: flex;
+            align-items: center; /* Center align items vertically */
+            height: 20px; 
+            margin-top: 5px;
         }
-
-   .technology-item {
-    display: flex;
-    align-items: center; /* Center align items vertically */
-    height: 20px; 
-    margin-top: 5px;
-}
         .technology-item span {
-    font-size: 1rem; /* Increased font size */
-    color: #BDC4D4; /* Make 3sure it matches your theme */
-}
+            font-size: 1rem; /* Increased font size */
+            color: #BDC4D4; /* Make 3sure it matches your theme */
+        }
 
 
         /* From Uiverse.io by Nawsome */
@@ -513,7 +516,9 @@
 
     /* About Section */
     .about-section {
-        padding: 10px;
+        padding: 20px;
+        margin-top: 20px;
+        width: 100%;
     }
 
     h3 {
@@ -521,67 +526,115 @@
     }
 
     .line {
-        width: 100px;
+        width: 120px;
+        margin-left: 10px;
     }
 
     .pos_cen {
-        display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center; /* Center the card */
+        gap: 20px;
+        width: 100%;
     }
 
-    .about-content p {
-        margin-right: 0;
-        text-align: left;
-        margin-bottom: 10px;
+    .about-card {
         width: 100%;
+        padding: 20px;
+        margin: 0;
+        max-width: 500px; /* Limit the maximum width */
     }
 
     .about-image {
         display: none; /* Hide image on mobile */
     }
 
-    .technologies {
+    .img_deg {
+        display: none; /* Hide image on mobile */
+    }
+
+    .about-card h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .about-card p {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: left;
+        margin: 0 0 20px 0;
         width: 100%;
-        margin-top: 20px;
-        grid-template-columns: repeat(2, 1fr); /* Keep 2 columns */
+        padding: 0;
+        display: block;
+        max-width: 100%;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+
+    .technologies {
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: 15px;
-        padding: 0 10px;
+        margin-top: 20px;
+        width: 100%;
     }
 
     .technology-item {
-        margin-top: 0;
+        height: auto;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
     }
 
-    .img_deg {
-        display: none;
+    .technology-item span {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    .arrow {
+        height: 12px;
+        width: 6px;
+        margin-right: 6px;
     }
 
     /* Projects Section */
     .projects-grid {
+        display: grid;
         grid-template-columns: 1fr;
         gap: 1.5rem;
         padding: 1rem;
+        overflow-x: visible;
     }
 
     .article-wrapper {
         width: 100%;
         max-width: 300px;
+        margin: 0 auto;
     }
 
     .article-wrapper:hover {
-        transform: translate(-10px, -10px);
+        transform: translateY(-5px);
         box-shadow: 5px 5px 0 #64ffda, 10px 10px 0 #233554;
     }
 
     /* Footer */
     .footer {
-        margin-top: 30px;
+        margin-top: 15px;
         padding: 15px 0;
     }
 
     .copyright-text {
         font-size: 0.9rem;
+    }
+
+    .about-card h3 {
+        text-align: left;
+    }
+
+    .about-content p {
+        margin-right: 0;
+        max-width: 100%;
     }
 }
 
@@ -597,17 +650,38 @@
     }
 
     .technologies {
-        grid-template-columns: repeat(2, 1fr); /* Keep 2 columns even on smaller screens */
-        grid-gap: 10px;
+        grid-gap: 12px;
     }
 
-    .technologies {
-        margin-top: 20px;
+    .technology-item span {
+        font-size: 0.9rem;
     }
 
-    .about-image,
-    .img_deg {
-        display: none;
+    .about-section {
+        padding: 15px;
+    }
+
+    .about-card {
+        max-width: 400px; /* Even smaller width for mobile */
+        padding: 15px;
+    }
+
+    .about-card h3 {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+    }
+
+    .line {
+        width: 100px;
+    }
+
+    .about-card p {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+        text-align: left;
+        width: 100%;
+        max-width: 100%;
+        line-height: 1.5;
     }
 }
 
@@ -626,8 +700,79 @@
     }
 }
 
+/* Add slideshow styles */
+.profile-slideshow {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.profile-slideshow .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.profile-slideshow .slide.active {
+    opacity: 1;
+}
+
+/* Update the existing img_deg class */
+.img_deg {
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 6px 13px 23px -5px rgba(0, 0, 0, 0.46);
+    object-fit: cover;
+}
+
+/* Add styles for the slideshow arrows */
+.slideshow-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64ffda;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 2;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+.slideshow-arrow:hover {
+    color: #64ffda;
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-arrow {
+    left: 10px;
+}
+
+.next-arrow {
+    right: 10px;
+}
+
+/* Remove the glow effect styles since we don't need them anymore */
+.slideshow-arrow::before {
+    display: none;
+}
+
         </style>
-    </head>
+</head>
 <body>
     <header>
         <nav>
@@ -635,242 +780,213 @@
             <a href="#about">ABOUT</a>
             <a href="#projects">PROJECTS</a>
             <a href="path/to/your/resume.pdf" target="_blank">RESUME</a>
-            <a href="mailto:xoxoreem8@gmail.com" class="get-in-touch">GET IN TOUCH</a>
+            <a href="mailto:h.akramnew@gmail.com" class="get-in-touch">GET IN TOUCH</a>
         </nav>
     </header>
 
     <main>
         <div class="intro-container">
-            <div id="fractal-tree"></div> <!-- Fractal tree placeholder -->
+            <div id="fractal-tree"></div>
             <h2>
                 Hi, <span style="color: #64ffda;">Hareem</span> here<br>
                 I like to <span class="animated-text" id="dynamic-text"></span><span class="cursor" id="cursor"></span>
             </h2>
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/hareem-akram-886143218" target="_blank" aria-label="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="https://github.com/yourprofile" target="_blank" aria-label="GitHub">
+                <a href="https://github.com/Hareem2024" target="_blank" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-            </div>
+    </div>
         </div>
     </main>
 
-
     <div class="about-section" id="about">
-        <h3>about me:<div class="line"></div></h3>
         <div class="pos_cen">
-            <p>
-                I am currently a full-time freelancer specializing in front-end<br> 
-                development and UI/UX design.<br> <br>
-                Here are some technologies I have been working with:
-            </p>
-            <div class="about-image">
-                <img class="img_deg" src="me3.jpg">
-            </div>
-            
-        </div>
+            <div class="about-card">
+                <h3>about me:<div class="line"></div></h3>
+                <p>
+                    I am a <span style="color: #64ffda;">Software Engineering</span> major, currently pursuing my degree with a specialization in <span style="color: #64ffda;">Full Stack web development</span> and <span style="color: #64ffda;">mobile app development</span>, I bring over <span style="color: #64ffda;">2 years</span> of experience in <span style="color: #64ffda;">front-end & back-end</span> technologies. My experience includes working with <span style="color: #64ffda;">startups</span>, <span style="color: #64ffda;">freelancing</span>, and taking on roles that effectively leverage my skills.
 
-        <!-- Technologies Grid below the About Me paragraph -->
-        <div class="technologies">
-            <div class="technology-item">
-                <div class="arrow">
-                    <div class="arrow-top"></div>
-                    <div class="arrow-bottom"></div>
+                    I excel in both <span style="color: #64ffda;">team</span> and <span style="color: #64ffda;">individual</span> environments, equipped with the skills and tools to develop <span style="color: #64ffda;">scalable</span>, <span style="color: #64ffda;">high-performing</span>, and <span style="color: #64ffda;">efficient</span> solutions.<br> <br>
+                    Here are some technologies I have been working with:
+                </p>
+                <div class="technologies">
+                    <div class="technology-item">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        <span>HTML/CSS</span>
+                    </div>
+                    <div class="technology-item">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        <span>Typescript</span>
+                    </div>
+                    <div class="technology-item">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        <span>Javascript ES6+</span>
+                    </div>
+                    <div class="technology-item">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        <span>React.js</span>
+                    </div>
+                    <div class="technology-item">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        <span>Vue.js</span>
+                    </div>
+                   
+                    <div class="technology-item">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        
+                        <span>Node.js</span>
+                    </div>
+                    <div class="technology-item">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        <span>Express.js</span>
+                    </div>
+                    <div class="technology-item">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        <span>Git</span>
+                    </div>
+                    <div class="technology-item">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        <span>MongoDB</span>
+                    </div>
+                    <div class="technology-item">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        <span>PostgreSQL</span>
+        </div>
+      </div>
+    </div>
+            <div class="about-image">
+                <div class="profile-slideshow">
+                    <button class="slideshow-arrow prev-arrow" onclick="prevSlide()">❮</button>
+                    <img src="m33.jpeg" alt="Profile Image 1" class="img_deg slide">
+                    <img src="m22.jpeg" alt="Profile Image 2" class="img_deg slide">
+                    <img src="me11.jpeg" alt="Profile Image 3" class="img_deg slide">
+                    <button class="slideshow-arrow next-arrow" onclick="nextSlide()">❯</button>
                 </div>
-                <span>HTML/CSS</span>
-            </div>
-            <div class="technology-item">
-                <div class="arrow">
-                    <div class="arrow-top"></div>
-                    <div class="arrow-bottom"></div>
-                </div>
-                <span>JavaScript</span>
-            </div>
-            <div class="technology-item">
-                <div class="arrow">
-                    <div class="arrow-top"></div>
-                    <div class="arrow-bottom"></div>
-                </div>
-                <span>React</span>
-            </div>
-            <div class="technology-item">
-                <div class="arrow">
-                    <div class="arrow-top"></div>
-                    <div class="arrow-bottom"></div>
-                </div>
-                <span>Figma</span>
-            </div>
-            <div class="technology-item">
-                <div class="arrow">
-                    <div class="arrow-top"></div>
-                    <div class="arrow-bottom"></div>
-                </div>
-                <span>Webflow</span>
-            </div>
-            <div class="technology-item">
-                <div class="arrow">
-                    <div class="arrow-top"></div>
-                    <div class="arrow-bottom"></div>
-                </div>
-                <span>Adobe Illustrator</span>
-            </div>
-            <div class="technology-item">
-                <div class="arrow">
-                    <div class="arrow-top"></div>
-                    <div class="arrow-bottom"></div>
-                </div>
-                <span>Canva</span>
-            </div>
-            <div class="technology-item">
-                <div class="arrow">
-                    <div class="arrow-top"></div>
-                    <div class="arrow-bottom"></div>
-                </div>
-                <span>Git</span>
             </div>
         </div>
     </div>
     <div class="projects-section" id="projects">
-        <h3>my projects:<div class="line"></div></h3>
+        <h3>pet projects:<div class="line"></div></h3>
         <div class="projects-grid">
-            <!-- Project Card 1 -->
-            <article class="article-wrapper">
+            <article class="article-wrapper" onclick="window.location.href='projects/elevate.html'" style="cursor: pointer;">
                 <div class="rounded-lg container-project">
-                    <img src="web1.jpeg" alt="Project 1" class="project-image">
+                    <img src="elevate official.jpg" alt="Project 1" class="project-image">
                 </div>
                 <div class="project-info">
                     <div class="flex-pr">
-                        <div class="project-title text-nowrap">Portfolio Website</div>
-                        <a href="https://github.com/yourusername/portfolio" target="_blank" class="project-hover">
-                            <i class="fab fa-github" style="color: #64ffda; font-size: 1.5em;"></i>
-                        </a>
+                        <div class="project-title text-nowrap">Online Clothing store</div>
+                    </div>
+                    <div class="types">
+                        <span class="project-type">• HTML</span>
+                        <span class="project-type">• Tailwind CSS</span>
+                        <span class="project-type">• JavaScript</span>
+                        <span class="project-type">• PostgreSQL</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article-wrapper" onclick="window.location.href='projects/crumb.html'" style="cursor: pointer;">
+                <div class="rounded-lg container-project">
+                    <img src="Crumb.jpg" alt="Project 2" class="project-image">
+                </div>
+                <div class="project-info">
+                    <div class="flex-pr">
+                        <div class="project-title text-nowrap">Crumb - cookie store</div>
+                    </div>
+                    <div class="types">
+                        <span class="project-type">• HTML</span>
+                        <span class="project-type">• Tailwind CSS</span>
+                        <span class="project-type">• JavaScript</span>
+                        <span class="project-type">• PostgreSQL</span>
+
+                    </div>
+                </div>
+            </article>
+
+            <article class="article-wrapper" onclick="window.location.href='projects/ai-chatbot.html'" style="cursor: pointer;">
+                <div class="rounded-lg container-project">
+                    <img src="yourai.jpg" alt="Project 3" class="project-image">
+                </div>
+                <div class="project-info">
+                    <div class="flex-pr">
+                        <div class="project-title text-nowrap">AI Chat Bot</div>
                     </div>
                     <div class="types">
                         <span class="project-type">• React</span>
-                        <span class="project-type">• JavaScript</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Project Card 2 -->
-            <article class="article-wrapper">
-                <div class="rounded-lg container-project">
-                    <img src="Untitled 3.png" alt="Project 2" class="project-image">
-                </div>
-                <div class="project-info">
-                    <div class="flex-pr">
-                        <div class="project-title text-nowrap">E-Commerce App</div>
-                        <a href="https://github.com/yourusername/ecommerce" target="_blank" class="project-hover">
-                            <i class="fab fa-github" style="color: #64ffda; font-size: 1.5em;"></i>
-                        </a>
-                    </div>
-                    <div class="types">
                         <span class="project-type">• Node.js</span>
+                        <span class="project-type">• Express</span>
                         <span class="project-type">• MongoDB</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Project Card 3 -->
-            <article class="article-wrapper">
-                <div class="rounded-lg container-project">
-                    <img src="uiux.jpeg" alt="Project 3" class="project-image">
-                </div>
-                <div class="project-info">
-                    <div class="flex-pr">
-                        <div class="project-title text-nowrap">UI/UX Design</div>
-                        <a href="https://github.com/yourusername/uiux-design" target="_blank" class="project-hover">
-                            <i class="fab fa-github" style="color: #64ffda; font-size: 1.5em;"></i>
-                        </a>
-                    </div>
-                    <div class="types">
-                        <span class="project-type">• Figma</span>
-                        <span class="project-type">• Adobe XD</span>
+                        <span class="project-type">• Ai model: Deep Seek v2</span>
                     </div>
                 </div>
             </article>
         </div>
     </div>
-    <!-- Replace existing footer with new styled footer -->
     <footer class="footer">
         <div class="container">
-            <p class="copyright-text">© <script>document.write(new Date().getFullYear())</script> Hareem. All rights reserved.</p>
+            <p class="copyright-text">Built and designed by Hareem.</p>
         </div>
     </footer>
  
+    <script src="js/main.js"></script>
     <script>
-        const phrases = ["create", "design", "develop"];
-        let index = 0;
-        let currentPhrase = '';
-        let letterIndex = 0;
-        let isDeleting = false;
-        const typingSpeed = 150; // Speed of typing in milliseconds
-        const erasingSpeed = 100; // Speed of erasing in milliseconds
-        const pauseBetween = 1000; // Pause between phrases
+        // Profile image slideshow
+        const slides = document.querySelectorAll('.profile-slideshow .slide');
+        let currentSlide = 0;
 
-        function type() {
-            if (letterIndex < phrases[index].length) {
-                currentPhrase += phrases[index].charAt(letterIndex);
-                letterIndex++;
-                document.getElementById("dynamic-text").innerText = currentPhrase;
-                setTimeout(type, typingSpeed);
-            } else {
-                setTimeout(deleteText, pauseBetween);
-            }
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
         }
 
-        function deleteText() {
-            if (letterIndex > 0) {
-                currentPhrase = currentPhrase.substring(0, letterIndex - 1);
-                letterIndex--;
-                document.getElementById("dynamic-text").innerText = currentPhrase;
-                setTimeout(deleteText, erasingSpeed);
-            } else {
-                index = (index + 1) % phrases.length; // Move to the next phrase
-                setTimeout(type, typingSpeed + 1000); // Pause before starting to type the next phrase
-            }
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
         }
 
-        // Start typing the first phrase
-        type();
-
-        // Fractal Tree Animation
-        let angle;
-
-        function setup() {
-            const canvas = createCanvas(400, 400);
-            canvas.parent('fractal-tree'); // Attach canvas to the fractal-tree div
-            angle = PI / 4;
-            stroke('#BDC4D4'); // Set stroke color to your accent color
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
         }
 
-        function draw() {
-            clear();
-            translate(200, height);
-            angle = map(sin(frameCount * 0.01), -1, 1, PI / 2, PI / 16); // Vary the angle using sin()
-            branch(100);
-        }
+        // Show first slide initially
+        showSlide(0);
 
-        function branch(len) {
-            line(0, 0, 0, -len);
-            translate(0, -len);
-            if (len > 4) {
-                push();
-                rotate(angle);
-                branch(len * 0.67);
-                pop();
-                push();
-                rotate(-angle);
-                branch(len * 0.67);
-                pop();
-            }
-        }
-    </script>
-    <script>
-        // Start the p5.js sketch
-        new p5();
+        // Optional: Remove or comment out the automatic slideshow
+        // setInterval(nextSlide, 3000);
     </script>
 </body>
 </html>
