@@ -516,9 +516,10 @@
 
     /* About Section */
     .about-section {
-        padding: 20px;
+        padding: 40px 20px 20px 20px; /* Reduced bottom padding */
         margin-top: 20px;
         width: 100%;
+        box-sizing: border-box;
     }
 
     h3 {
@@ -539,9 +540,10 @@
 
     .about-card {
         width: 100%;
-        padding: 20px;
-        margin: 0;
-        max-width: 500px; /* Limit the maximum width */
+        padding: 30px; /* Reduced padding */
+        margin: 0 auto; /* Center the card */
+        max-width: 700px;
+        box-sizing: border-box;
     }
 
     .about-image {
@@ -563,19 +565,29 @@
         font-size: 1rem;
         line-height: 1.6;
         text-align: left;
-        margin: 0 0 20px 0;
+        margin: 0 0 35px 0;
         width: 100%;
         padding: 0;
         display: block;
         max-width: 100%;
         word-wrap: break-word;
         white-space: normal;
+        overflow-wrap: break-word;
+        box-sizing: border-box;
+        letter-spacing: -0.2px;
+    }
+
+    .about-content p {
+        margin-right: 0;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .technologies {
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 15px;
-        margin-top: 20px;
+        grid-gap: 25px;
+        margin-top: 35px;
         width: 100%;
     }
 
@@ -599,18 +611,46 @@
     }
 
     /* Projects Section */
+    .projects-section {
+        padding: 20px 20px 40px 20px; /* Reduced top padding */
+        margin-top: 0; /* Remove top margin */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .projects-section .about-card {
+        margin-top: 0; /* Remove top margin */
+    }
+
+    .projects-section h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        color: #BDC4D4; /* Match about section text color */
+    }
+
+    .projects-section .line {
+        width: 120px;
+        margin-left: 10px;
+        border-top: 1px solid #24292e5e; /* Match about section line */
+    }
+
     .projects-grid {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1rem;
+        gap: 1rem; /* Reduced gap */
+        padding: 0.5rem 0; /* Reduced padding */
         overflow-x: visible;
+        margin-top: 15px; /* Reduced margin */
+        width: 100%;
     }
 
     .article-wrapper {
         width: 100%;
         max-width: 300px;
-        margin: 0 auto;
+        margin: 0 auto; /* Center the cards */
     }
 
     .article-wrapper:hover {
@@ -630,11 +670,6 @@
 
     .about-card h3 {
         text-align: left;
-    }
-
-    .about-content p {
-        margin-right: 0;
-        max-width: 100%;
     }
 }
 
@@ -658,12 +693,12 @@
     }
 
     .about-section {
-        padding: 15px;
+        padding: 30px 15px 15px 15px; /* Further reduced bottom padding */
     }
 
     .about-card {
-        max-width: 400px; /* Even smaller width for mobile */
-        padding: 15px;
+        padding: 25px; /* Further reduced padding */
+        max-width: 600px;
     }
 
     .about-card h3 {
@@ -677,11 +712,35 @@
 
     .about-card p {
         font-size: 0.95rem;
-        margin-bottom: 15px;
+        line-height: 1.5;
         text-align: left;
         width: 100%;
         max-width: 100%;
-        line-height: 1.5;
+        box-sizing: border-box;
+        letter-spacing: -0.2px;
+    }
+
+    .projects-section {
+        padding: 15px 15px 30px 15px; /* Further reduced top padding */
+    }
+
+    .projects-section .about-card {
+        padding: 25px; /* Further reduced padding */
+        max-width: 600px;
+    }
+
+    .projects-section h3 {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+    }
+
+    .projects-section .line {
+        width: 100px;
+    }
+
+    .projects-grid {
+        gap: 0.8rem; /* Further reduced gap */
+        margin-top: 12px; /* Further reduced margin */
     }
 }
 
@@ -899,60 +958,62 @@
         </div>
     </div>
     <div class="projects-section" id="projects">
-        <h3>pet projects:<div class="line"></div></h3>
-        <div class="projects-grid">
-            <article class="article-wrapper" onclick="window.location.href='projects/elevate.html'" style="cursor: pointer;">
-                <div class="rounded-lg container-project">
-                    <img src="elevate official.jpg" alt="Project 1" class="project-image">
-                </div>
-                <div class="project-info">
-                    <div class="flex-pr">
-                        <div class="project-title text-nowrap">Online Clothing store</div>
+        <div class="about-card">
+            <h3>pet projects:<div class="line"></div></h3>
+            <div class="projects-grid">
+                <article class="article-wrapper" onclick="window.location.href='projects/elevate.html'" style="cursor: pointer;">
+                    <div class="rounded-lg container-project">
+                        <img src="elevate official.jpg" alt="Project 1" class="project-image">
                     </div>
-                    <div class="types">
-                        <span class="project-type">• HTML</span>
-                        <span class="project-type">• Tailwind CSS</span>
-                        <span class="project-type">• JavaScript</span>
-                        <span class="project-type">• PostgreSQL</span>
+                    <div class="project-info">
+                        <div class="flex-pr">
+                            <div class="project-title text-nowrap">Online Clothing store</div>
+                        </div>
+                        <div class="types">
+                            <span class="project-type">• HTML</span>
+                            <span class="project-type">• Tailwind CSS</span>
+                            <span class="project-type">• JavaScript</span>
+                            <span class="project-type">• PostgreSQL</span>
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
 
-            <article class="article-wrapper" onclick="window.location.href='projects/crumb.html'" style="cursor: pointer;">
-                <div class="rounded-lg container-project">
-                    <img src="Crumb.jpg" alt="Project 2" class="project-image">
-                </div>
-                <div class="project-info">
-                    <div class="flex-pr">
-                        <div class="project-title text-nowrap">Crumb - cookie store</div>
+                <article class="article-wrapper" onclick="window.location.href='projects/crumb.html'" style="cursor: pointer;">
+                    <div class="rounded-lg container-project">
+                        <img src="Crumb.jpg" alt="Project 2" class="project-image">
                     </div>
-                    <div class="types">
-                        <span class="project-type">• HTML</span>
-                        <span class="project-type">• Tailwind CSS</span>
-                        <span class="project-type">• JavaScript</span>
-                        <span class="project-type">• PostgreSQL</span>
+                    <div class="project-info">
+                        <div class="flex-pr">
+                            <div class="project-title text-nowrap">Crumb - cookie store</div>
+                        </div>
+                        <div class="types">
+                            <span class="project-type">• HTML</span>
+                            <span class="project-type">• Tailwind CSS</span>
+                            <span class="project-type">• JavaScript</span>
+                            <span class="project-type">• PostgreSQL</span>
 
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
 
-            <article class="article-wrapper" onclick="window.location.href='projects/ai-chatbot.html'" style="cursor: pointer;">
-                <div class="rounded-lg container-project">
-                    <img src="yourai.jpg" alt="Project 3" class="project-image">
-                </div>
-                <div class="project-info">
-                    <div class="flex-pr">
-                        <div class="project-title text-nowrap">AI Chat Bot</div>
+                <article class="article-wrapper" onclick="window.location.href='projects/ai-chatbot.html'" style="cursor: pointer;">
+                    <div class="rounded-lg container-project">
+                        <img src="yourai.jpg" alt="Project 3" class="project-image">
                     </div>
-                    <div class="types">
-                        <span class="project-type">• React</span>
-                        <span class="project-type">• Node.js</span>
-                        <span class="project-type">• Express</span>
-                        <span class="project-type">• MongoDB</span>
-                        <span class="project-type">• Ai model: Deep Seek v2</span>
+                    <div class="project-info">
+                        <div class="flex-pr">
+                            <div class="project-title text-nowrap">AI Chat Bot</div>
+                        </div>
+                        <div class="types">
+                            <span class="project-type">• React</span>
+                            <span class="project-type">• Node.js</span>
+                            <span class="project-type">• Express</span>
+                            <span class="project-type">• MongoDB</span>
+                            <span class="project-type">• Ai model: Deep Seek v2</span>
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
+            </div>
         </div>
     </div>
     <footer class="footer">
