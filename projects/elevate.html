@@ -8,79 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=NTR&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/projects.css">
-    <style>
-        .project-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 20px 0;
-        }
-
-        .project-meta span {
-            background: #233554;
-            color: #64ffda;
-            padding: 8px 15px;
-            border-radius: 15px;
-            font-size: 14px;
-            font-family: 'NTR', sans-serif;
-        }
-
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .gallery-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-image:hover {
-            transform: scale(1.02);
-        }
-
-        @media screen and (max-width: 768px) {
-            .image-gallery {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .gallery-image {
-                height: 180px;
-            }
-
-            .project-meta {
-                gap: 8px;
-                margin: 15px 0;
-            }
-
-            .project-meta span {
-                font-size: 12px;
-                padding: 6px 12px;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .gallery-image {
-                height: 160px;
-            }
-
-            .project-meta {
-                gap: 6px;
-                margin: 12px 0;
-            }
-
-            .project-meta span {
-                font-size: 11px;
-                padding: 5px 10px;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -92,12 +19,10 @@
                 Elevate is a modern online clothing store built with HTML, Tailwind CSS, and JavaScript. The project features a responsive design, product filtering, shopping cart functionality, and a seamless checkout process. It showcases front-end development skills and attention to user experience.
             </p>
         </div>
-        <div class="image-gallery">
-            <img src="../elevate1.jpg" alt="Elevate Project Image 1" class="gallery-image">
-            <img src="../elevate2.jpg" alt="Elevate Project Image 2" class="gallery-image">
-            <img src="../elevate3.jpg" alt="Elevate Project Image 3" class="gallery-image">
-            <img src="../elevate4.jpg" alt="Elevate Project Image 4" class="gallery-image">
-        </div>
+        <img src="../elevate1.jpg" alt="Elevate Project Image 1" class="project-image">
+        <img src="../elevate2.jpg" alt="Elevate Project Image 2" class="project-image">
+        <img src="../elevate3.jpg" alt="Elevate Project Image 3" class="project-image">
+        <img src="../elevate4.jpg" alt="Elevate Project Image 4" class="project-image">
     </div>
 </body>
 </html>
